@@ -9,7 +9,14 @@ There are a variety of more advanced retrieval strategies you may wish to try, e
 - [Embedded tables](/examples/query_engine/sec_tables/tesla_10q_table.ipynb)
 - [Small-to-big retrieval](/examples/node_postprocessor/MetadataReplacementDemo.ipynb)
 
-See our full [retrievers module guide](/module_guides/querying/retriever/retrievers.md) for a comprehensive list of all retrieval strategies.
+See our full [retrievers module guide](/module_guides/querying/retriever/retrievers.md) for a comprehensive list of all retrieval strategies, broken down into different categories.
+
+- Basic retrieval from each index
+- Advanced retrieval and search
+- Auto-Retrieval
+- Knowledge Graph Retrievers
+- Composed/Hierarchical Retrievers
+- and more!
 
 More resources are below.
 
@@ -25,6 +32,24 @@ maxdepth: 1
 /optimizing/advanced_retrieval/query_transformations.md
 ```
 
+## Composable Retrievers
+
+Every retriever is capable of retrieving and running other objects, including
+
+- other retrievers
+- query engines
+- query pipelines
+- other nodes
+
+For more details, check out the guide below.
+
+```{toctree}
+---
+maxdepth: 1
+---
+/examples/retrievers/composable_retrievers.ipynb
+```
+
 ## Third-Party Resources
 
 Here are some third-party resources on advanced retrieval strategies.
@@ -36,17 +61,4 @@ maxdepth: 1
 DeepMemory (Activeloop) </examples/retrievers/deep_memory.ipynb>
 /examples/vector_stores/WeaviateIndexDemo-Hybrid.ipynb
 /examples/vector_stores/PineconeIndexDemo-Hybrid.ipynb
-```
-
-## Structured Outputs
-
-You may want to ensure your output is structured. See our comprehensive guides below to see how to do that.
-
-```{toctree}
----
-maxdepth: 1
----
-/optimizing/advanced_retrieval/structured_outputs/structured_outputs.md
-/optimizing/advanced_retrieval/structured_outputs/pydantic_program.md
-/optimizing/advanced_retrieval/structured_outputs/query_engine.md
 ```

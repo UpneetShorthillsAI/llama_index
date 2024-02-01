@@ -28,7 +28,7 @@ from llama_index.llama_dataset import (
 
 example1 = LabelledRagDataExample(
     query="This is some user query.",
-    query_by=CreatedBy(type=CreateByType.HUMAN),
+    query_by=CreatedBy(type=CreatedByType.HUMAN),
     reference_answer="This is a reference answer. Otherwise known as ground-truth answer.",
     reference_contexts=[
         "This is a list",
@@ -105,7 +105,7 @@ contexts retrieved by the RAG system to generated the predicted response.
 
 ## Where To Find `LabelledRagDataset`'s
 
-You can find all of the `LabelledRagDataset`'s in [llamahub](https://llambahub.ai). You can browse each one of these and decide
+You can find all of the `LabelledRagDataset`'s in [llamahub](https://llamahub.ai). You can browse each one of these and decide
 if you do decide that you'd like to use it to benchmark your RAG pipeline, then
 you can download the dataset as well as the source `Document`'s conveniently thru
 one of two ways: the `llamaindex-cli` or through Python code using the
@@ -118,10 +118,10 @@ llamaindex-cli download-llamadataset PaulGrahamEssayDataset --download-dir ./dat
 
 ```python
 # using python
-from llama_index.llama_datasets import download_llama_datasets
+from llama_index.llama_dataset import download_llama_dataset
 
 # a LabelledRagDataset and a list of source Document's
-rag_dataset, documents = download_llama_datasets(
+rag_dataset, documents = download_llama_dataset(
     "PaulGrahamEssayDataset", "./data"
 )
 ```

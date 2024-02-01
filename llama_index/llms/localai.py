@@ -7,19 +7,20 @@ Source: https://github.com/go-skynet/LocalAI
 
 import warnings
 from types import MappingProxyType
-from typing import Any, Callable, Dict, Mapping, Optional, Sequence
+from typing import Any, Callable, Dict, Optional, Sequence
 
 from llama_index.bridge.pydantic import Field
 from llama_index.constants import DEFAULT_CONTEXT_WINDOW
+from llama_index.core.llms.types import ChatMessage, LLMMetadata
 from llama_index.llms.openai import OpenAI
 from llama_index.llms.openai_like import OpenAILike
 from llama_index.llms.openai_utils import is_function_calling_model
-from llama_index.llms.types import ChatMessage, LLMMetadata
 from llama_index.types import BaseOutputParser, PydanticProgramMode
 
 # Use these as kwargs for OpenAILike to connect to LocalAIs
 DEFAULT_LOCALAI_PORT = 8080
-LOCALAI_DEFAULTS: Mapping[str, Any] = MappingProxyType(
+# TODO: move to MappingProxyType[str, Any] once Python 3.9+
+LOCALAI_DEFAULTS: Dict[str, Any] = MappingProxyType(  # type: ignore[assignment]
     {
         "api_key": "localai_fake",
         "api_type": "localai_fake",
